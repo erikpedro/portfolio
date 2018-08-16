@@ -1,5 +1,7 @@
 package br.com.portifolio.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,6 +19,10 @@ public class ProjetoDAO {
 	
 	 public void gravar(Projeto projeto){
 		manager.persist(projeto);
+	}
+
+	public List<Projeto> listar() {
+		return manager.createQuery("select p from Projeto p", Projeto.class).getResultList();
 	}
 
 }

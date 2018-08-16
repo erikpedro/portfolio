@@ -1,11 +1,24 @@
 package br.com.portifolio.controllers;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.portifolio.daos.ProjetoDAO;
+import br.com.portifolio.infra.FileSaver;
 import br.com.portifolio.models.Projeto;
+import br.com.portifolio.validation.ProjetoValidation;
 
 @Controller
 public class ProjetosController {
@@ -13,17 +26,50 @@ public class ProjetosController {
 	@Autowired
 	private ProjetoDAO projetoDao;
 	
-	@RequestMapping("/projetos/form")
-	public String form() {
-		return "projetos/form";
+	@Autowired
+	private FileSaver fileSaver;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		
+	binder.addValidators(new ProjetoValidation());
+		
 	}
 	
 	
-	@RequestMapping("/projetos")
-	public String gravar( Projeto projeto) {
-		System.out.println(projeto);
+	@RequestMapping("/projetos/form")
+	public ModelAndView form(Projeto projeto) {
+		ModelAndView modelAndView = new ModelAndView("projetos/form");
+		return modelAndView ;
+	}
+	
+	
+	@RequestMapping(value="/projetos",method=RequestMethod.POST)
+	public ModelAndView gravar( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
+		
+		
+		if(result.hasErrors()) {
+			return form(projeto);
+		}
+		
+		
+		String path = fileSaver.write("pasta-anexos", anexo);
+		projeto.setAnexoPath(path);
+		
 		projetoDao.gravar(projeto);
-		return "projetos/ok";
+		
+		redirectAttributes.addFlashAttribute("sucesso", "Projeto Cadastrado com sucesso!");
+		return new ModelAndView("redirect:projetos"); 
+	}
+	
+	
+	@RequestMapping(value="/projetos", method=RequestMethod.GET)
+	public ModelAndView listar() {
+	  List<Projeto> projetos = projetoDao.listar();
+	  ModelAndView modelAndView = new ModelAndView("projetos/lista");
+	  modelAndView.addObject("projetos", projetos);
+	  
+	  return modelAndView;
 	}
 	
 
