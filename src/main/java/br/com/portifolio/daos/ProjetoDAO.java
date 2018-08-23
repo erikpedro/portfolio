@@ -25,4 +25,8 @@ public class ProjetoDAO {
 		return manager.createQuery("select p from Projeto p", Projeto.class).getResultList();
 	}
 
+	public Projeto find(Integer id) {
+		return manager.find(Projeto.class, id);
+	}
+
 }
