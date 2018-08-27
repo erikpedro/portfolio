@@ -150,54 +150,23 @@
           <h2 class="mb-5">Recent Projects</h2>
         </div>
         <div class="row no-gutters">
+         <c:forEach items="${projetos}" var="projeto">
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="portfolio-item" href="${s:mvcUrl('PC#detalhe').arg(0, projeto.id).build() }">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Stationary</h2>
+                  <h2>${projeto.projeto }</h2>
                   <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
                 </span>
               </span>
               <img class="img-fluid" src="resources/img/portfolio-1.jpg" alt="">
             </a>
           </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Ice Cream</h2>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="resources/img/portfolio-2.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="resources/img/portfolio-3.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-              <img class="img-fluid" src="resources/img/portfolio-4.jpg" alt="">
-            </a>
-          </div>
-        </div>
+            </c:forEach>
+      </div>
+    
       </div>
     </section>
-
     <!-- Call to Action -->
     <section class="content-section bg-primary text-white">
       <div class="container text-center">
