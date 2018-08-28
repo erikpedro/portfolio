@@ -28,5 +28,15 @@ public class ProjetoDAO {
 	public Projeto find(Integer id) {
 		return manager.find(Projeto.class, id);
 	}
+	
+	public void remover(Integer id) {
+        manager.remove(find(id));
+    }
 
+	public void update(Projeto projeto) {
+		manager.merge(projeto);
+	}
+	
+	
+	
 }

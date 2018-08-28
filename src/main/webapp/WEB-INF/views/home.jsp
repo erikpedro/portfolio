@@ -52,13 +52,13 @@
           <a class="js-scroll-trigger" href="#page-top">Home</a>
         </li>
         <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="${s:mvcUrl('PC#listar').build() }">Lista de Projetos</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a>
+        </li>
+          <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#services">Services</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#contact">Contact</a>

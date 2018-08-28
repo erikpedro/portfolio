@@ -11,11 +11,14 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.web.accept.ContentNegotiationManager;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -101,5 +104,15 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		
 		return resolver;
 	}
+	
+	@Bean
+	@Order(Ordered.HIGHEST_PRECEDENCE)
+	public CharacterEncodingFilter characterEncodingFilter() {
+	  CharacterEncodingFilter filter = new CharacterEncodingFilter();
+	  filter.setEncoding("UTF-8");
+	  filter.setForceEncoding(true);
+	  return filter;
+	}
+	
 	
 }

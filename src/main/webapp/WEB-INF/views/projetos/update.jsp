@@ -61,9 +61,18 @@
 <h1  align="center">Cadastro de Projetos</h1>
 
 	<div class="container">
-		<form:form action="${s:mvcUrl('PC#gravar').build() }" method="post"
+		<form:form action="${s:mvcUrl('PC#update').build() }" method="post"
 			commandName="projeto" enctype="multipart/form-data">
 
+
+	<div class="form-group">
+				<div class="col-md-6 offset-md-3">
+					<label>Projeto id </label>
+					<form:input path="id" cssClass="form-control"
+					disabled="true"	placeholder="Nome do Projeto" />
+					<form:errors path="id" />
+				</div>
+			</div>
 
 			<div class="form-group">
 				<div class="col-md-6 offset-md-3">
@@ -112,7 +121,7 @@
 
 			<div class="form-group">
 				<div class="col-md-6 offset-md-3">
-					<button class="btn btn-primary" type="submit">Cadastrar</button>
+					<button class="btn btn-primary" type="submit">Atualizar</button>
 				</div>
 			</div>
 		</form:form>

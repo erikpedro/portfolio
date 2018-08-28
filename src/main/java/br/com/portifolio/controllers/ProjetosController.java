@@ -84,5 +84,49 @@ public class ProjetosController {
 		
 	}
 	
+	
+	@RequestMapping(value="/projetos/alterar/{id}",method=RequestMethod.GET)
+	public ModelAndView alterar(@PathVariable ("id") Integer id ) {
+		System.out.println("Entrando Alterar");
+		ModelAndView modelAndView = new ModelAndView("projetos/update");
+		Projeto projeto = projetoDao.find(id);
+		modelAndView.addObject("projeto", projeto);
+		return modelAndView; 
+	}
+	
+	
+	
+	@RequestMapping(value="/projetos/update",method=RequestMethod.POST)
+	public ModelAndView update( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
+		
+		
+		if(result.hasErrors()) {
+			return form(projeto);
+		}
+		
+		
+		String path = fileSaver.write("pasta-anexos", anexo);
+		projeto.setAnexoPath(path);
+		System.out.println("Metodo update");
+		projetoDao.update(projeto);
+		System.out.println("executou metodo");
+		
+		redirectAttributes.addFlashAttribute("sucesso", "Projeto Cadastrado com sucesso!");
+		return new ModelAndView("redirect:projetos"); 
+	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping( method = RequestMethod.GET  ,value="projetos/remover/{id}")
+	public ModelAndView remover(@PathVariable ("id") Integer id, RedirectAttributes redirectAttributes  ) {
+		projetoDao.remover(id);
+		redirectAttributes.addFlashAttribute("sucesso", "Projeto Removido com sucesso!");
+		return new ModelAndView("redirect:/projetos"); 
+	}
+	
+	
 
 }
