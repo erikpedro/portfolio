@@ -51,12 +51,15 @@ public class ProjetosController {
 	public ModelAndView gravar( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
 		
 		
-		if(result.hasErrors()) {
+		if(result.hasErrors() || anexo.isEmpty()) {
+			
 			return form(projeto);
+			
 		}
 		
+	
 		
-		String path = fileSaver.write("pasta-anexos", anexo);
+		String path = fileSaver.write("resources/pasta-anexos", anexo);
 		projeto.setAnexoPath(path);
 		
 		projetoDao.gravar(projeto);
@@ -100,19 +103,23 @@ public class ProjetosController {
 	public ModelAndView update( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
 		
 		
-		if(result.hasErrors()) {
-			return form(projeto);
+		if(result.hasErrors() || anexo.isEmpty())  {
+			
+			
+			ModelAndView modelAndView = new ModelAndView("projetos/update");
+			redirectAttributes.addFlashAttribute("error", "Projeto Atualizado com sucesso!");
+			return modelAndView;
 		}
 		
 		
-		String path = fileSaver.write("pasta-anexos", anexo);
+		String path = fileSaver.write("resources/pasta-anexos", anexo);
 		projeto.setAnexoPath(path);
 		System.out.println("Metodo update");
 		projetoDao.update(projeto);
 		System.out.println("executou metodo");
 		
-		redirectAttributes.addFlashAttribute("sucesso", "Projeto Cadastrado com sucesso!");
-		return new ModelAndView("redirect:projetos"); 
+		redirectAttributes.addFlashAttribute("sucesso", "Projeto Atualizado com sucesso!");
+		return new ModelAndView("redirect:/projetos"); 
 	}
 	
 	

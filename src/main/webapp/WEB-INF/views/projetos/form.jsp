@@ -57,7 +57,7 @@
 </nav>
 
 
-	
+<p>${erro }</p>
 <h1  align="center">Cadastro de Projetos</h1>
 
 	<div class="container">
@@ -88,8 +88,8 @@
 			<div class="form-group">
 				<div class="col-md-6 offset-md-3">
 					<label>Descrição</label>
-					<form:textarea cssClass="form-control" path="descricao" rows="10"
-						cols="20" />
+					<form:textarea cssClass="form-control" path="descricao" rows="5"
+						cols="10" />
 					<form:errors path="descricao" />
 				</div>
 			</div>
@@ -107,6 +107,7 @@
 				<div class="col-md-6 offset-md-3">
 					<label>Anexos do Projeto</label> <input class="form-control-file"
 						name="anexo" type="file" />
+						<form:errors path="anexoPath" />
 				</div>
 			</div>
 
