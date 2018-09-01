@@ -122,11 +122,6 @@ public class ProjetosController {
 		return new ModelAndView("redirect:/projetos"); 
 	}
 	
-	
-	
-	
-	
-	
 	@RequestMapping( method = RequestMethod.GET  ,value="projetos/remover/{id}")
 	public ModelAndView remover(@PathVariable ("id") Integer id, RedirectAttributes redirectAttributes  ) {
 		projetoDao.remover(id);
