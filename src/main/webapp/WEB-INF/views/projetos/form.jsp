@@ -9,21 +9,26 @@
 <head>
 
 
-<!-- Bootstrap Core CSS -->
-<link rel='stylesheet' href='/webjars/bootstrap/4.1.2/css/bootstrap.min.css'>
-<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
-<!-- Custom Fonts -->
-<link href="../resources/lib/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css">
-<link
-	href="../resources/vendor/simple-line-icons/css/simple-line-icons.css"
-	rel="stylesheet">
+<c:url value="/resources/css" var="bootstrapCss"/>
+<c:url value="/resources/js" var="bootstrapJs"/>
 
-<!-- Custom CSS -->
-<link href="../resources/css/stylish-portfolio.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link rel='stylesheet' href="${bootstrapCss }/bootstrap.css">
+<script type="text/javascript" src="${bootstrapJs }/jquery.min.js" ></script>
+<script type="text/javascript" src="${bootstrapJs }/bootstrap.min.js"></script>
+<script type="text/javascript" src="${bootstrapJs }/bootstrap.bundle.min.js" ></script>
+<!-- Custom Fonts -->
+<!-- <link href="../resources/lib/fontawesome-free/css/all.min.css" -->
+<!-- 	rel="stylesheet" type="text/css"> -->
+<!-- <link -->
+<!-- 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" -->
+<!-- 	rel="stylesheet" type="text/css"> -->
+<!-- <link -->
+<!-- 	href="../resources/vendor/simple-line-icons/css/simple-line-icons.css" -->
+<!-- 	rel="stylesheet"> -->
+
+ <!-- Custom CSS -->
+<!-- <link href="../resources/css/stylish-portfolio.min.css" rel="stylesheet"> -->
 
 
 <title>Portifolio Erik Pedro Gonçalves</title>
@@ -117,21 +122,6 @@
 			</div>
 		</form:form>
 	</div>
-
-
-
-	<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
-
-	<script src="webjars/bootstrap/4.1.2/bootstrap.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<s:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"
-		var="vendJqueryEasing" />
-	<script src="${vendJqueryEasing}"></script>
-
-	<!-- Custom scripts for this template -->
-	<s:url value="/resources/js/stylish-portfolio.min.js" var="port" />
-	<script src="${port}"></script>
 
 </body>
 </html>
