@@ -12,12 +12,12 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] {SpringSecurityConfiguration.class };
+		return new Class[] {SpringSecurityConfiguration.class, AppWebConfiguration.class, JPAConfiguration.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class };
+		return new Class[] {};
 	}
 
 	@Override
@@ -30,6 +30,9 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		registration.setMultipartConfig(new MultipartConfigElement(""));
 
 	}
+	
+	
+	
 
 	@Override
 	protected Filter[] getServletFilters(){

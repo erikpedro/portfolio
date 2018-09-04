@@ -10,11 +10,10 @@
 
 
 <!-- Bootstrap Core CSS -->
-<link href="../resources/vendor/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-
+<link rel='stylesheet' href='/webjars/bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 <!-- Custom Fonts -->
-<link href="../resources/vendor/fontawesome-free/css/all.min.css"
+<link href="../resources/lib/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
@@ -121,22 +120,17 @@
 
 
 
-	<!-- Bootstrap core JavaScript -->
-	<s:url value="../resources/vendor/bootstrap/js/bootstrap.bundle.min.js"
-		var="vendBootJs" />
-	<script src="${vendBootJs}"></script>
+	<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
 
-	<s:url value="../resources/vendor/jquery/jquery.min.js"
-		var="vendJquery" />
-	<script src="${vendJquery}"></script>
+	<script src="webjars/bootstrap/4.1.2/bootstrap.min.js"></script>
 
 	<!-- Plugin JavaScript -->
-	<s:url value="../resources/vendor/jquery-easing/jquery.easing.min.js"
+	<s:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"
 		var="vendJqueryEasing" />
 	<script src="${vendJqueryEasing}"></script>
 
 	<!-- Custom scripts for this template -->
-	<s:url value="../resources/js/stylish-portfolio.min.js" var="port" />
+	<s:url value="/resources/js/stylish-portfolio.min.js" var="port" />
 	<script src="${port}"></script>
 
 </body>

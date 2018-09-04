@@ -21,12 +21,8 @@
 		<value>.jsp</value>
 	</property>
     </bean>
-
-    <mvc:resources mapping="/resources/**" location="/resources/js" cache-period="31556926"/>
-    <mvc:resources mapping="/resources/**" location="/resources/css" cache-period="31556926"/>
-    <mvc:resources mapping="/resources/**" location="/resources/img" cache-period="31556926"/>
-    <mvc:resources mapping="/resources/**" location="/resources/vendor"/>
-    <mvc:resources mapping="/resources/**" location="/resources/pasta-anexos"/>
+	
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 
     <mvc:annotation-driven />
 	
