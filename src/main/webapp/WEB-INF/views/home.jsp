@@ -81,10 +81,11 @@
 
         <ul class="nav-menu list-unstyled">
           <li><a href="#header" class="smoothScroll">Home</a></li>
-          <li><a href="#about" class="smoothScroll">About</a></li>
-          <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
+          <li><a href="#about" class="smoothScroll">Sobre</a></li>
           <li><a href="#journal" class="smoothScroll">Blog</a></li>
-          <li><a href="#contact" class="smoothScroll">Contact</a></li>
+          <li><a href="#contact" class="smoothScroll">Contato</a></li>
+          <li> <a href="${s:mvcUrl('PC#listar').build() }" class="smootScroll" >Lista de Projetos</a></li>
+         <li> <a class="smoothScroll" href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a></li>
         </ul>
 
       </div>
@@ -97,17 +98,17 @@
   <div id="header" class="home">
 
     <div class="container">
-      <div class="header-content">
+      <div class="header-content name a" >
+      
         <h1>I'm <span class="typed"></span></h1>
         <p>Spring, Java EE, Angular</p>
 
         <ul class="list-unstyled list-social">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="ion-social-github"></i></a></li>
+          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
           <li><a href="#"><i class="ion-social-twitter"></i></a></li>
           <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+          <li><a href="#"><i class="ion-social-skype"></i></a></li>
         </ul>
       </div>
     </div>
@@ -209,7 +210,7 @@
 
     <div class="container">
       <div class="section-title text-center">
-        <h2>My Portfolio</h2>
+        <h2>Portfolio</h2>
       </div>
     </div>
 
@@ -282,13 +283,13 @@
           <div class="col-lg-6">
             <div class="contact-contact">
 
-              <h2 class="mb-30">GET IN TOUCH</h2>
+              <h2 class="mb-30">CONTATO</h2>
 
               <ul class="contact-details">
-                <li><span>23 Main, Street</span></li>
-                <li><span>New York, United States</span></li>
-                <li><span>+88 01912704287</span></li>
-                <li><span>example@example.com</span></li>
+                <li><span>Samambaia Sul</span></li>
+                <li><span>Brasilia</span></li>
+                <li><span>+55 61983817218</span></li>
+                <li><span>erikpedro@gmail.com</span></li>
               </ul>
 
             </div>
@@ -330,7 +331,7 @@
                 </div>
 
                 <div class="col-lg-12">
-                  <input type="submit" class="btn btn-defeault btn-send" value="Send message">
+                  <input disabled="disabled" type="submit" class="btn btn-defeault btn-send" value="Send message">
                 </div>
 
               </div>
@@ -349,17 +350,16 @@
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="ion-social-github"></i></a></li>
+          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
           <li><a href="#"><i class="ion-social-twitter"></i></a></li>
           <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+          <li><a href="#"><i class="ion-social-skype"></i></a></li>
         </ul>
 
       </div>
 
-      <p>&copy; Copyrights Folio. All rights reserved.</p>
+      <p>&copy; Copyrights Erik Pedro Gonçalves. All rights reserved.</p>
 
       <div class="credits">
         <!--
