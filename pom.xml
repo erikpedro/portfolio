@@ -8,7 +8,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
-		<finalName>portifolio</finalName>
+		<finalName>portfolio</finalName>
 	</build>
 
 	<dependencies>

@@ -209,7 +209,7 @@
 
     <div class="container">
       <div class="section-title text-center">
-        <h2>journal</h2>
+        <h2>My Portfolio</h2>
       </div>
     </div>
 
