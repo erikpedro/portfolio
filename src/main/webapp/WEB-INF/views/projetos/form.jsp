@@ -11,24 +11,14 @@
 
 <c:url value="/resources/css" var="bootstrapCss"/>
 <c:url value="/resources/js" var="bootstrapJs"/>
+<c:url value="/resources" var="boot"/>
 
 <!-- Bootstrap Core CSS -->
 <link rel='stylesheet' href="${bootstrapCss }/bootstrap.css">
 <script type="text/javascript" src="${bootstrapJs }/jquery.min.js" ></script>
 <script type="text/javascript" src="${bootstrapJs }/bootstrap.min.js"></script>
 <script type="text/javascript" src="${bootstrapJs }/bootstrap.bundle.min.js" ></script>
-<!-- Custom Fonts -->
-<!-- <link href="../resources/lib/fontawesome-free/css/all.min.css" -->
-<!-- 	rel="stylesheet" type="text/css"> -->
-<!-- <link -->
-<!-- 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" -->
-<!-- 	rel="stylesheet" type="text/css"> -->
-<!-- <link -->
-<!-- 	href="../resources/vendor/simple-line-icons/css/simple-line-icons.css" -->
-<!-- 	rel="stylesheet"> -->
-
- <!-- Custom CSS -->
-<!-- <link href="../resources/css/stylish-portfolio.min.css" rel="stylesheet"> -->
+<link rel="shortcut icon" type="image/x-icon" media="all" href="${boot }/favicon.ico" />
 
 
 <title>Portifolio Erik Pedro Gonçalves</title>

@@ -59,7 +59,7 @@ public class ProjetosController {
 		
 	
 		
-		String path = fileSaver.write("resources/pasta-anexos", anexo);
+		String path = fileSaver.write("resources/img-anexos", anexo);
 		projeto.setAnexoPath(path);
 		
 		projetoDao.gravar(projeto);
