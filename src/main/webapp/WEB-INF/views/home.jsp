@@ -4,6 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
+
 
 
 <!DOCTYPE html>
@@ -80,12 +82,15 @@
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
         <ul class="nav-menu list-unstyled">
+      
           <li><a href="#header" class="smoothScroll">Home</a></li>
           <li><a href="#about" class="smoothScroll">Sobre</a></li>
           <li><a href="#journal" class="smoothScroll">Blog</a></li>
           <li><a href="#contact" class="smoothScroll">Contato</a></li>
-          <li> <a href="${s:mvcUrl('PC#listar').build() }" class="smootScroll" >Lista de Projetos</a></li>
-         <li> <a class="smoothScroll" href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a></li>
+          <li> <a href="${s:mvcUrl('PC#listar').build() }" class="smootScroll" >Admin</a></li>
+          <security:authorize access="isAuthenticated()">
+         	 <li><a href="logout"><i class="ion-log-out"></i></a></li>
+          </security:authorize>
         </ul>
 
       </div>
