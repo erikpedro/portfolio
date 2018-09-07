@@ -4,6 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,30 +26,36 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="${s:mvcUrl('HC#index').build() }">
- <i class="fab fa-java"  ></i>
-  Portifolio
-  </a>
+	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="${s:mvcUrl('HC#index').build() }"> <i
+			class="fab fa-java"></i> Portifolio
+		</a>
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="${s:mvcUrl('PC#listar').build() }">Lista de Projetos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a>
-      </li>
-    </ul>
-  </div> 
-</nav>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link"
+					href="${s:mvcUrl('PC#listar').build() }">Lista de Projetos</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a></li>
+					
+			</ul>
+					
+					<span class="navbarText">
+				    <a class="nav-link"
+					href="#"><security:authentication property="principal.username"/></a>
+				    </span>		
+				    <a class="btn btn-sm btn-outline-secondary" href="logout">Logout</a>
+				 
+		</div>
+	</nav>
 
 
 <p>${erro }</p>
