@@ -53,6 +53,8 @@
   <c:url value="/resources/css" var="blog"/>
   <link href="${blog }/blog.css" rel="stylesheet">
 
+  <c:url value="/resources/img-anexos" var="img"/>
+  <link href="${img }/javar" rel="stylesheet">
 
   <!-- Responsive css -->
   <c:url value="/resources/css" var="responsive"/>
@@ -99,7 +101,7 @@
             <div class="container-main single-main">
               <div class="col-md-12">
                 <div class="block-main mb-30">
-                  <img src="${projeto.anexoPath}" class="img-responsive" alt="reviews2">
+                  <img src="${img }/${projeto.anexoPath}" class="img-responsive" alt="reviews2">
                 <article id="${projeto.id}">
                   <div class="content-main single-post padDiv">
                   <div class="journal-txt">
