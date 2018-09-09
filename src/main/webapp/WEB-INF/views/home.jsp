@@ -26,8 +26,7 @@
 
 <!-- Bootstrap Core CSS -->
 
-  <!-- Template Main Javascript File -->
-  <script src="${bootstrapJs }/main.js"></script>
+
     <c:url value="/resources/css" var="style"/>
   <link href="${style }/style.css" rel="stylesheet">
 
@@ -364,6 +363,8 @@
   <script type="text/javascript" src="${carouseljs }/owl.carousel.min.js"></script>
   <script type="text/javascript" src="${magnificjs }/magnific-popup.min.js"></script>
   <script type="text/javascript" src="${isotope }/isotope.pkgd.min.js"></script>
+    <!-- Template Main Javascript File -->
+  <script src="${bootstrapJs }/main.js"></script>
 
 
 </body>
