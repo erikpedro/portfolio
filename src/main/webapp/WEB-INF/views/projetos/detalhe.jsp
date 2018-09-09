@@ -18,7 +18,7 @@
     <c:url value="/resources/css" var="bootstrapCss"/>
 <c:url value="/resources/js" var="bootstrapJs"/>
 <c:url value="/resources" var="boot"/>
-<c:url value="/resources/img-anexos" var="img"/>
+<c:url value="https://erikportfolio.herokuapp.com" var="img"/>
 
 <!-- Bootstrap Core CSS -->
 <link rel='stylesheet' href="${bootstrapCss }/bootstrap.css">
