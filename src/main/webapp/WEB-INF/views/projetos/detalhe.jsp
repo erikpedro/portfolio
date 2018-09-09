@@ -53,7 +53,7 @@
   <c:url value="/resources/css" var="blog"/>
   <link href="${blog }/blog.css" rel="stylesheet">
 
-  <c:url value="/resources/img-anexos" var="img"/>
+  <c:url value="../.." var="img"/>
   <link href="${img }/javar" rel="stylesheet">
 
   <!-- Responsive css -->
