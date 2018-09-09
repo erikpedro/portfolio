@@ -76,7 +76,8 @@
 							<td>${projeto.descricao }</td>
 							<td>${projeto.linkprojeto}</td>
 							<td><fmt:formatDate pattern="dd/MM/yyyy" value="${projeto.dataDeploy.time}" /></td>
-							<td><img alt="imagen" src="${projeto.anexoPath}" width="10%" height="10%" ></td>
+<%-- 							<td><img alt="imagen" src="${projeto.anexoPath}" width="10%" height="10%" ></td> --%>
+								<td>${projeto.anexoPath}</td>
 							<td><a
 								href="<c:url value='projetos/alterar'/>/${projeto.id}">Alterar</a>
 								<a href="<c:url value='projetos/remover'/>/${projeto.id}">Remover</a>
