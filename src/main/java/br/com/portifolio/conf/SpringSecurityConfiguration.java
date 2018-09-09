@@ -28,6 +28,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/projetos").hasRole("ADMIN")
 		.antMatchers("/projetos/**").permitAll()
 		.antMatchers("/**").permitAll()
+		.antMatchers("/mors-exspiravit").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll()
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));

@@ -6,7 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class GeradorPass {
 
 	public static void main(String[] args) {
-		String password = "123456"; 
+		String password = ""; 
 	    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); 
 	    String encodedPassword = passwordEncoder.encode(password);  
 	    System.out.print(encodedPassword);
