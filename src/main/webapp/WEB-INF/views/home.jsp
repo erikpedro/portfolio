@@ -85,7 +85,7 @@
       
           <li><a href="#header" class="smoothScroll">Home</a></li>
           <li><a href="#about" class="smoothScroll">Sobre</a></li>
-          <li><a href="#journal" class="smoothScroll">Blog</a></li>
+          <li><a href="#journal" class="smoothScroll">Portfolio</a></li>
           <li><a href="#contact" class="smoothScroll">Contato</a></li>
           <li> <a href="${s:mvcUrl('PC#listar').build() }" class="smootScroll" >Admin</a></li>
           <security:authorize access="isAuthenticated()">
@@ -106,14 +106,13 @@
       <div class="header-content name a" >
       
         <h1>I'm <span class="typed"></span></h1>
-        <p>Spring, Java EE, Angular</p>
+        <p>Portifolio em Desenvolvimento, Versão 1.0</p>
 
         <ul class="list-unstyled list-social">
           <li><a href="#"><i class="ion-social-github"></i></a></li>
           <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
           <li><a href="#"><i class="ion-social-skype"></i></a></li>
+          <li><a href="#"><i class="ion-ios-email"></i></a></li>
         </ul>
       </div>
     </div>
@@ -129,7 +128,7 @@
         <div class="col-lg-4 ">
           <div class="div-img-bg">
             <div class="about-img">
-              <img src="resources/images/me.jpg" class="img-responsive" alt="me">
+              <img src="resources/images/code.jpg" class="img-responsive" alt="me">
             </div>
           </div>
         </div>
@@ -158,7 +157,7 @@
           <div class="services-block">
 
             <i class="ion-ios-browsers-outline"></i>
-            <span>UI/UX DESIGN</span>
+            <span>Desenvolvedor Java Web com Spring</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
@@ -166,23 +165,23 @@
           <div class="services-block">
 
             <i class="ion-ios-lightbulb-outline"></i>
-            <span>BRAND IDENTITY</span>
+            <span>Desenvolvedor Java Web Enterprise</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-ios-color-wand-outline"></i>
-            <span>WEB DESIGN</span>
+            <i class="ion-laptop"></i>
+            <span>Desenvolvedor Java Web</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-social-android-outline"></i>
-            <span>MOBILE APPS</span>
+            <i class="ion-monitor"></i>
+            <span>Desenvolvedor Java</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
@@ -190,15 +189,15 @@
           <div class="services-block">
 
             <i class="ion-ios-analytics-outline"></i>
-            <span>Analytics</span>
+            <span>Integração Contínua Jenkins</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-ios-camera-outline"></i>
-            <span>PHOTOGRAPHY</span>
+            <i class="ion-social-codepen-outline"></i>
+            <span>Angular 4</span>
             <p class="separator">To an English person, it will seem like simplified English,told me what </p>
 
           </div>
@@ -222,7 +221,7 @@
     <div class="container">
       <div class="journal-block">
         <div class="row">
-
+		<c:forEach items="${projetos }" var="projeto">
           <div class="col-lg-4 col-md-6">
             <div class="journal-info">
 
@@ -230,50 +229,19 @@
 
               <div class="journal-txt">
 
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
+                <h4><a href="${s:mvcUrl('PC#detalhe').arg(0, projeto.id).build() }">${projeto.projeto }</a></h4>
+                <p class="separator">${projeto.descricao }
                 </p>
 
               </div>
 
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-
-              <a href="blog-single.html"><img src="resources/images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="#blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-
-              <a href="blog-single.html"><img src="resources/images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">To an English person, it will seem like simplified English
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
+          </c:forEach>
         </div>
       </div>
     </div>
+    
 
   </div>
   <!-- End section journal -->
@@ -291,8 +259,8 @@
               <h2 class="mb-30">CONTATO</h2>
 
               <ul class="contact-details">
-                <li><span>Samambaia Sul</span></li>
                 <li><span>Brasilia</span></li>
+                <li><span>Samambaia Sul</span></li>
                 <li><span>+55 61983817218</span></li>
                 <li><span>erikpedro@gmail.com</span></li>
               </ul>
@@ -355,10 +323,9 @@
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
+         <li><a href="#"><i class="ion-ios-email"></i></a></li>
           <li><a href="#"><i class="ion-social-github"></i></a></li>
           <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
           <li><a href="#"><i class="ion-social-skype"></i></a></li>
         </ul>
 

@@ -4,6 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,35 +15,48 @@
   <title>${projeto.projeto} Portifolio </title>
   <meta content="" name="keywords">
   <meta content="" name="description">
-  
-  	<c:url value="/resources/css" var="cssPath" />
-  	<c:url value="/resources/lib/bootstrap/css" var="bootPath" />
-    <link rel="stylesheet" href="${bootPath}/bootstrap.min.css" />
-   
+    <c:url value="/resources/css" var="bootstrapCss"/>
+<c:url value="/resources/js" var="bootstrapJs"/>
+<c:url value="/resources" var="boot"/>
+<c:url value="/resources/img-anexos" var="img"/>
+
+<!-- Bootstrap Core CSS -->
+<link rel='stylesheet' href="${bootstrapCss }/bootstrap.css">
+<script type="text/javascript" src="${bootstrapJs }/jquery.min.js" ></script>
+<script type="text/javascript" src="${bootstrapJs }/bootstrap.min.js"></script>
+<script type="text/javascript" src="${bootstrapJs }/bootstrap.bundle.min.js" ></script>
+
+ <!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" media="all" href="${boot }/favicon.ico" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link rel="stylesheet" href="${bootPath}/bootstrap.min.css">
 
   <!-- Libraries CSS Files -->
-  <link href="resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="resources/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="resources/lib/hover/hover.min.css" rel="stylesheet">
-
-  <!-- Blog Stylesheet File -->
-  <link href="${cssPath}/blog.css" rel="stylesheet">
+  <c:url value="/resources/ionicons/css" var="icons"/>
+  <link href="${icons }/ionicons.min.css" rel="stylesheet">
+  
+   <c:url value="/resources/owlcarousel/assets" var="carousel"/>
+  <link href="${carousel }/owl.carousel.min.css" rel="stylesheet">
+  
+  <c:url value="/resources/magnific-popup" var="magnific"/>
+  <link href="${magnific }/magnific-popup.css" rel="stylesheet">
+  
+  
+  <link href="${bootstrapCss }/hover.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="${cssPath}/style.css" rel="stylesheet">
+  <c:url value="/resources/css" var="style"/>
+  <link href="${style }/style.css" rel="stylesheet">
+
+  <c:url value="/resources/css" var="blog"/>
+  <link href="${blog }/blog.css" rel="stylesheet">
+
 
   <!-- Responsive css -->
-  <link href="${cssPath}/responsive.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="resources/images/favicon.png">
+  <c:url value="/resources/css" var="responsive"/>
+  <link href="${responsive }/responsive.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: Folio
@@ -53,25 +67,25 @@
 </head>
 
 <body>
-
   <!-- start section navbar -->
   <nav id="main-nav-subpage" class="subpage-nav">
     <div class="row">
       <div class="container">
 
         <div class="logo">
-          <a href="index.html">Erik Pedro Gonçalves</a>
+          <a href="index.html"><img src="../../resources/images/logo.png" alt="logo"></a>
         </div>
 
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
         <ul class="nav-menu list-unstyled">
-          <li><a href="#homee" class="smoothScroll">Home</a></li>
-          <li><a href="#about" class="smoothScroll">About</a></li>
-          <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-          <li><a href="#blog" class="smoothScroll">Blog</a></li>
-          <li><a href="#contact" class="smoothScroll">Contact</a></li>
+      
+          <li><a href="${s:mvcUrl('HC#index').build() }" class="smoothScroll">Home</a></li>
+          <li><a href="${s:mvcUrl('HC#index').build() }" class="smoothScroll">Sobre</a></li>
+          <li><a href="${s:mvcUrl('HC#index').build() }" class="smoothScroll">Contato</a></li>
+          <li> <a href="${s:mvcUrl('PC#listar').build() }" class="smootScroll" >Admin</a></li>
         </ul>
+
       </div>
     </div>
   </nav>
@@ -85,21 +99,21 @@
             <div class="container-main single-main">
               <div class="col-md-12">
                 <div class="block-main mb-30">
+                  <img src="${projeto.anexoPath}" class="img-responsive" alt="reviews2">
                 <article id="${projeto.id}">
+                  <div class="content-main single-post padDiv">
                   <div class="journal-txt">
                       <h4><a>${projeto.projeto }</a></h4>
                     </div>
-                  <img src="images/blog-post-big.jpg" class="img-responsive" alt="reviews2">
-                  <div class="content-main single-post padDiv">
                     <div class="post-meta">
                       <ul class="list-unstyled mb-0">
                         <li class="author">by:<a href="#">Erik Pedro Gonçalves</a></li>
                         <li class="date">date:<a href="#"><fmt:formatDate pattern="dd/MM/yyyy" value="${projeto.dataDeploy.time}"/></a></li>
-                        <li class="commont"><i class="ion-ios-heart-outline"></i><a href="${projeto.linkprojeto}">${projeto.linkprojeto}</a></li>
+                        <li class="commont"><i class="ion-android-cloud-circle"> </i>Link: <a target="_blank" href="${projeto.linkprojeto}">${projeto.linkprojeto}</a></li>
                       </ul>
                     </div>
                     <p class="mb-30">${projeto.descricao}</p>
-                    <blockquote>If you are still looking for that one person who will change your life, take a look in the mirror.</blockquote>
+                    <blockquote>${projeto.descricao}</blockquote>
                   </div>
                   </article>
                 </div>
@@ -116,15 +130,14 @@
   <!-- start section footer -->
   <div id="footer" class="text-center">
     <div class="container">
-      <div class="socials-media text-center">
+<div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="ion-social-github"></i></a></li>
+          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
           <li><a href="#"><i class="ion-social-twitter"></i></a></li>
           <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+          <li><a href="#"><i class="ion-social-skype"></i></a></li>
         </ul>
 
       </div>
@@ -145,20 +158,22 @@
   </div>
   <!-- End section footer -->
 
-  <!-- JavaScript Libraries -->
-  <script src="resources/lib/jquery/jquery.min.js"></script>
-  <script src="resources/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="resources/lib/typed/typed.js"></script>
-  <script src="resources/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="resources/lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="resources/lib/isotope/isotope.pkgd.min.js"></script>
+ <c:url value="/resources/isotope" var="isotope"/>
+<c:url value="/resources/magnific-popup" var="magnificjs"/>
+<c:url value="/resources/owlcarousel" var="carouseljs"/>
+<c:url value="/resources/typed" var="typed"/>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+
+  <!-- JavaScript Libraries -->
+  <script type="text/javascript" src="${typed }/typed.js"></script>
+  <script type="text/javascript" src="${carouseljs }/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="${magnificjs }/magnific-popup.min.js"></script>
+  <script type="text/javascript" src="${isotope }/isotope.pkgd.min.js"></script>
+
 
   <!-- Template Main Javascript File -->
-  <script src="resources/js/main.js"></script>
+  <script src="${bootstrapJs }/main.js"></script>
+
 
 </body>
 
