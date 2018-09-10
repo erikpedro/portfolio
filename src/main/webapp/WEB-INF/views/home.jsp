@@ -62,7 +62,6 @@
   <!-- Responsive css -->
   <c:url value="/resources/css" var="responsive"/>
   <link href="${responsive }/responsive.css" rel="stylesheet">
-
   <!-- Favicon -->
 
   <!-- =======================================================
