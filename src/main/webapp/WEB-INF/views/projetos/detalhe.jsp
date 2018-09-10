@@ -133,11 +133,9 @@
 <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="#"><i class="ion-social-github"></i></a></li>
-          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-skype"></i></a></li>
+            <li><a target="_blank" href="https://github.com/erikpedro"><i class="ion-social-github"></i></a></li>
+          <li><a target="_blank"  href="https://www.linkedin.com/in/erik-gon%C3%A7alves-1a219978/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a target="_blank"  href="mailto:erikpedro@gmail.com?cc=erikpedro@outlook.com&subject=Acessei Seu Portolio&body= Ola Gostou do Portfolio?"><i class="ion-ios-email"></i></a></li>
         </ul>
 
       </div>

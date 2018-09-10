@@ -81,7 +81,7 @@
       <div class="container">
 
         <div class="logo">
-          <a href="index.html"><img src="resources/images/logo.png" alt="logo"></a>
+          <a href="index.html"><img src="resources/images/logom.png" alt="logo"></a>
         </div>
 
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
@@ -111,13 +111,13 @@
       <div class="header-content name a" >
       
         <h1>I'm <span class="typed"></span></h1>
-        <p>Portifolio em Desenvolvimento, Versão 1.0</p>
+        <p>Portfolio em Desenvolvimento, Versão 1.0</p>
 
         <ul class="list-unstyled list-social">
-          <li><a href="#"><i class="ion-social-github"></i></a></li>
-          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="#"><i class="ion-social-skype"></i></a></li>
-          <li><a href="#"><i class="ion-ios-email"></i></a></li>
+          <li><a target="_blank" href="https://github.com/erikpedro"><i class="ion-social-github"></i></a></li>
+          <li><a target="_blank"  href="https://www.linkedin.com/in/erik-gon%C3%A7alves-1a219978/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a target="_blank"  href="mailto:erikpedro@gmail.com?cc=erikpedro@outlook.com&subject=Acessei Seu Portolio&body= Ola Gostou do Portfolio?"><i class="ion-ios-email"></i></a></li>
+          
         </ul>
       </div>
     </div>
@@ -161,49 +161,57 @@
 
           <div class="services-block">
 
-            <i class="ion-ios-browsers-outline"></i>
-            <span>Desenvolvedor Java Web com Spring</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-leaf"></i>
+           
+            <a target="_blank"  href="https://cursos.alura.com.br/career/certificate/c1a2937f-3592-4845-99da-66a553b14bc3"><span >Desenvolvedor Java Web com Spring</span> </a>
+            <p  class="separator">As Carreiras na Plataforma Alura são grupos de cursos com uma ordem para você evoluir como profissional em diferentes áreas. </p>
+          </div>
+
+          <div class="services-block">
+
+            <i class="ion-coffee"></i>
+          <a target="_blank"  href="https://cursos.alura.com.br/career/certificate/2762cb10-9927-46eb-844a-275666676d78" ><span>Desenvolvedor Java Web Enterprise</span></a>
+            <p class="separator">As Carreiras na Plataforma Alura são grupos de cursos com uma ordem para você evoluir como profissional em diferentes áreas. </p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-ios-lightbulb-outline"></i>
-            <span>Desenvolvedor Java Web Enterprise</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-android-menu"></i>
+          <a target="_blank" href="https://cursos.alura.com.br/certificate/31571023-de3a-46b3-a0e6-d009a180e1b9"><span>EJB</span></a>  
+            <p class="separator">O Poder do Java EE</p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-laptop"></i>
-            <span>Desenvolvedor Java Web</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-settings"></i>
+           <a target="_blank"  href="https://cursos.alura.com.br/certificate/2fc60645-dd40-47db-b655-98ebf708e4c7"><span>Docker</span></a> 
+            <p class="separator">Criando containers sem dor de cabeça</p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-monitor"></i>
-            <span>Desenvolvedor Java</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-power"></i>
+           <a target="_blank"  href="https://cursos.alura.com.br/certificate/aa7367d5-134c-4038-83b8-4e9b339236c8"><span>Integração Contínua Jenkins</span></a> 
+            <p class="separator">Maturidade e Produtividade no Desenvolvimento de Software</p>
 
           </div>
 
           <div class="services-block">
 
-            <i class="ion-ios-analytics-outline"></i>
-            <span>Integração Contínua Jenkins</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-social-angular"></i>
+            <a target="_blank"  href="https://www.udemy.com/certificate/UC-4AIZFP80/"><span>Angular 4</span></a>
+            <p class="separator">Construindo Aplicações Web Com o Novo Angular (4, 5 e 6)</p>
 
           </div>
+          
+            <div class="services-block">
 
-          <div class="services-block">
-
-            <i class="ion-social-codepen-outline"></i>
-            <span>Angular 4</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            <i class="ion-network"></i>
+            <a target="_blank"  href="https://cursos.alura.com.br/certificate/f423b465-0922-4713-97d3-9b4a5d8ec32b"><span>Git</span></a>
+            <p class="separator">Controle e compartilhe seu código</p>
 
           </div>
 
@@ -328,11 +336,12 @@
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-         <li><a href="#"><i class="ion-ios-email"></i></a></li>
-          <li><a href="#"><i class="ion-social-github"></i></a></li>
-          <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-          <li><a href="#"><i class="ion-social-skype"></i></a></li>
+         <li><a target="_blank" href="https://github.com/erikpedro"><i class="ion-social-github"></i></a></li>
+          <li><a target="_blank"  href="https://www.linkedin.com/in/erik-gon%C3%A7alves-1a219978/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a target="_blank"  href="mailto:erikpedro@gmail.com?cc=erikpedro@outlook.com&subject=Acessei Seu Portolio&body= Ola Gostou do Portfolio?"><i class="ion-ios-email"></i></a></li>
         </ul>
+        
+        
 
       </div>
 

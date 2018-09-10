@@ -9,58 +9,89 @@
 <html>
 <head>
 
+<!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<c:url value="/resources/css" var="bootstrapCss"/>
+  <title>${projeto.projeto} Portifolio </title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+    <c:url value="/resources/css" var="bootstrapCss"/>
 <c:url value="/resources/js" var="bootstrapJs"/>
 <c:url value="/resources" var="boot"/>
+<c:url value="https://erikportfolio.herokuapp.com" var="img"/>
 
 <!-- Bootstrap Core CSS -->
 <link rel='stylesheet' href="${bootstrapCss }/bootstrap.css">
 <script type="text/javascript" src="${bootstrapJs }/jquery.min.js" ></script>
 <script type="text/javascript" src="${bootstrapJs }/bootstrap.min.js"></script>
 <script type="text/javascript" src="${bootstrapJs }/bootstrap.bundle.min.js" ></script>
+
+ <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" media="all" href="${boot }/favicon.ico" />
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 
-<title>Portifolio Erik Pedro Gonçalves</title>
+
+  <!-- Libraries CSS Files -->
+  <c:url value="/resources/ionicons/css" var="icons"/>
+  <link href="${icons }/ionicons.min.css" rel="stylesheet">
+  
+   <c:url value="/resources/owlcarousel/assets" var="carousel"/>
+  <link href="${carousel }/owl.carousel.min.css" rel="stylesheet">
+  
+  <c:url value="/resources/magnific-popup" var="magnific"/>
+  <link href="${magnific }/magnific-popup.css" rel="stylesheet">
+  
+  
+  <link href="${bootstrapCss }/hover.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <c:url value="/resources/css" var="style"/>
+  <link href="${style }/style.css" rel="stylesheet">
+
+  <c:url value="/resources/css" var="blog"/>
+  <link href="${blog }/blog.css" rel="stylesheet">
+
+
+  <!-- Responsive css -->
+  <c:url value="/resources/css" var="responsive"/>
+  <link href="${responsive }/responsive.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Folio
+    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
 </head>
+
 <body>
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
 
-	<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-		<!-- Brand -->
-		<a class="navbar-brand" href="${s:mvcUrl('HC#index').build() }"> <i
-			class="fab fa-java"></i> Portifolio
-		</a>
+        <div class="logo">
+          <a href="index.html"><img src="../resources/images/logom.png" alt="logo"></a>
+        </div>
 
-		<!-- Toggler/collapsibe Button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
-		<!-- Navbar links -->
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link"
-					href="${s:mvcUrl('PC#listar').build() }">Lista de Projetos</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${s:mvcUrl('PC#form').build() }">Cadastro de Projetos</a></li>
-					
-			</ul>
-					
-					<span class="navbarText">
-				    <a class="nav-link"
-					href="#"><security:authentication property="principal.username"/></a>
-				    </span>		
-				    <a class="btn btn-sm btn-outline-secondary" href="logout">Logout</a>
-				 
-		</div>
-	</nav>
-
-
+        <ul class="nav-menu list-unstyled">
+      
+          <li><a href="${s:mvcUrl('HC#index').build() }" class="smoothScroll">Home</a></li>
+          <li><a href="${s:mvcUrl('PC#listar').build() }" class="smoothScroll">Lista de Projetos</a></li>
+          <li><a href="${s:mvcUrl('PC#form').build() }" class="smoothScroll">Cadastro de Projetos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br>
 <p>${erro }</p>
 <h1  align="center">Cadastro de Projetos</h1>
-
+<br>
 	<div class="container">
 		<form:form action="${s:mvcUrl('PC#gravar').build() }" method="post"
 			commandName="projeto" enctype="multipart/form-data">
@@ -119,6 +150,52 @@
 			</div>
 		</form:form>
 	</div>
+	
+	<!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+<div class="socials-media text-center">
+
+        <ul class="list-unstyled">
+          <li><a target="_blank" href="https://github.com/erikpedro"><i class="ion-social-github"></i></a></li>
+          <li><a target="_blank"  href="https://www.linkedin.com/in/erik-gon%C3%A7alves-1a219978/"><i class="ion-social-linkedin"></i></a></li>
+          <li><a target="_blank"  href="mailto:erikpedro@gmail.com?cc=erikpedro@outlook.com&subject=Acessei Seu Portolio&body= Ola Gostou do Portfolio?"><i class="ion-ios-email"></i></a></li>
+        </ul>
+
+      </div>
+
+      <p>&copy; Copyrights Erik Pedro Gonçalves. All rights reserved.</p>
+
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- End section footer -->
+
+ <c:url value="/resources/isotope" var="isotope"/>
+<c:url value="/resources/magnific-popup" var="magnificjs"/>
+<c:url value="/resources/owlcarousel" var="carouseljs"/>
+<c:url value="/resources/typed" var="typed"/>
+
+
+  <!-- JavaScript Libraries -->
+  <script type="text/javascript" src="${typed }/typed.js"></script>
+  <script type="text/javascript" src="${carouseljs }/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="${magnificjs }/magnific-popup.min.js"></script>
+  <script type="text/javascript" src="${isotope }/isotope.pkgd.min.js"></script>
+
+
+  <!-- Template Main Javascript File -->
+  <script src="${bootstrapJs }/main.js"></script>	
+	
 
 </body>
 </html>
