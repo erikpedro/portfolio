@@ -73,7 +73,7 @@
       <div class="container">
 
         <div class="logo">
-          <a href="index.html"><img src="../../resources/images/logom.png" alt="logo"></a>
+          <a href="${s:mvcUrl('HC#index').build() }"><img src="../../resources/images/logom.png" alt="logo"></a>
         </div>
 
         <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
