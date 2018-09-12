@@ -51,7 +51,7 @@ public class ProjetosController {
 	public ModelAndView gravar( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
 		
 		
-		if(result.hasErrors() || anexo.isEmpty()) {
+		if(result.hasErrors()) {
 			
 			return form(projeto);
 			
@@ -103,7 +103,7 @@ public class ProjetosController {
 	public ModelAndView update( MultipartFile anexo, @Valid Projeto projeto, BindingResult result, RedirectAttributes redirectAttributes ) {
 		
 		
-		if(result.hasErrors() || anexo.isEmpty())  {
+		if(result.hasErrors())  {
 			
 			
 			ModelAndView modelAndView = new ModelAndView("projetos/update");
@@ -112,7 +112,7 @@ public class ProjetosController {
 		}
 		
 		
-		String path = fileSaver.write("resources/pasta-anexos", anexo);
+		String path = fileSaver.write("resources/img-anexos", anexo);
 		projeto.setAnexoPath(path);
 		System.out.println("Metodo update");
 		projetoDao.update(projeto);
