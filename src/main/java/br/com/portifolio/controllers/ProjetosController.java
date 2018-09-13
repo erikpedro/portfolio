@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.portifolio.daos.ProjetoDAO;
 import br.com.portifolio.infra.FileSaver;
+import br.com.portifolio.infra.S3Service;
 import br.com.portifolio.models.Projeto;
 import br.com.portifolio.validation.ProjetoValidation;
 
@@ -30,6 +31,9 @@ public class ProjetosController {
 	
 	@Autowired
 	private FileSaver fileSaver;
+	
+	@Autowired
+    private S3Service s3service;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -61,6 +65,8 @@ public class ProjetosController {
 		
 		String path = fileSaver.write("resources/img-anexos", anexo);
 		projeto.setAnexoPath(path);
+		s3service.uploadFile("/home/erik/Imagens/58551.jpg");
+		
 		
 		projetoDao.gravar(projeto);
 		

@@ -28,14 +28,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.amazonaws.services.s3.AmazonS3;
 import com.google.common.cache.CacheBuilder;
 
 import br.com.portifolio.controllers.HomeController;
 import br.com.portifolio.daos.ProjetoDAO;
 import br.com.portifolio.infra.FileSaver;
+import br.com.portifolio.infra.S3Service;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses= {HomeController.class, ProjetoDAO.class, FileSaver.class})
+@ComponentScan(basePackageClasses= {HomeController.class, ProjetoDAO.class, FileSaver.class, 
+		AmazonS3.class, S3Service.class, S3Config.class})
 
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
@@ -56,7 +59,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		messageSource.setCacheSeconds(1);
 		
 		return messageSource;
-	}
+	}	
+	
 	
 	@Bean
 	public FormattingConversionService  mvcConversionService() {
