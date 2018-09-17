@@ -59,7 +59,7 @@
     <form:form servletRelativeAction="/login" method="POST"  class="form-signin">
       <div class="text-center mb-4">
         <img class="mb-4" src="resources/images/javam.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Login Portifolio</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Login Portfolio</h1>
       </div>
 
       <div class="form-label-group">
