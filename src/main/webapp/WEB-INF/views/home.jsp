@@ -23,6 +23,7 @@
   <c:url value="/resources/css" var="bootstrapCss"/>
 <c:url value="/resources/js" var="bootstrapJs"/>
 <c:url value="/resources" var="boot"/>
+<c:url value="https://erikportfolio.herokuapp.com" var="img"/>
 
 <!-- Bootstrap Core CSS -->
 
@@ -237,7 +238,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="journal-info">
 
-              <a href="${s:mvcUrl('PC#detalhe').arg(0, projeto.id).build() }"><img src="${projeto.anexoPath}" class="img-responsive" alt="img"></a>
+              <a href="${s:mvcUrl('PC#detalhe').arg(0, projeto.id).build() }"><img src="${img }/${projeto.anexoPath}" class="img-responsive" alt="img"></a>
 
               <div class="journal-txt">
 
